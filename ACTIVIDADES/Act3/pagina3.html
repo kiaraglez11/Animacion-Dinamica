@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 3</title>
+    <style>
+        body{ 
+            text-align: center;
+            background-color: black;
+        }
+        canvas{
+            border: 5px solid rgb(204, 162, 72);
+            background-color: rgb(184, 184, 184);
+        }    
+    </style>
+
+    <script>
+      window.onload=function(){
+          var canvas = document.getElementById("micanvas");
+          var context = canvas.getContext("2d");
+          context.fillStyle= "black";
+          context.fillRect(10,10,40,10); //función para dibujar un rectángulo
+
+           context.fillStyle= "rgba(0,0,255,0.5)";
+          context.fillRect(50,10,40,10); //función para dibujar un rectángulo
+
+          context.fillStyle= "pink";
+          context.fillRect(90,10,40,10); //función para dibujar un rectángulo
+          context.fillStyle= "pink";
+          context.fillRect(130,10,40,10);
+          context.fillStyle= "pink";
+          context.fillRect(170,10,40,10);
+          context.fillStyle= "rgba(0,0,255,0.5)";
+          context.fillRect(210,10,40,10);
+          context.fillStyle= "black";
+          context.fillRect(250,10,40,10);
+           context.fillStyle= "black";
+          context.fillRect(290,10,240,10);
+
+        }
+  </script>
+
+</head>
+<body>
+    <canvas id="micanvas" width="800" height="600"></canvas>
+</body>
+</html>
