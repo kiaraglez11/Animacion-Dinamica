@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body { 
+        background-color:rgb(119, 11, 11);
+        text-align: center;
+      }
+      canvas {
+        background-color:rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <script>
+    window.onload = function () {
+      var canvas = document.getElementById("canvas");
+      var context = canvas.getContext("2d");
+      var x=Math.random() * 650;
+        var y=200;
+        var dx=2;
+        var dy=2;
+
+      context.font = '40pt Calibri';
+      context.fillStyle = 'white';
+      context.fillText('¿Sigues ahi?', 270, 550); //<== para poner texto en el canvas
+
+      var imagen= new Image();
+      imagen.src = "logo_netflix.png"; 
+
+        function animate(){    
+            requestAnimationFrame(animate);
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            context.drawImage(imagen, x, y, 150, 150); 
+            if (x > 650 || x < 0){
+                dx= -dx;
+                } else if(y > 300 || y < 0){
+              dy= -dy;
+            }
+           x+=dx;
+           y+=dy;
+        }
+      
+      animate();
+
+    };
+    </script>
+  </body>
+</html>
