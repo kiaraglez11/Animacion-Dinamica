@@ -11,34 +11,84 @@
         }
         canvas{
             border: 5px solid rgb(204, 162, 72);
-            background-color: rgb(184, 184, 184);
+            background-color: rgb(0, 0, 0);
         }    
     </style>
 
     <script>
+         var x= 300;
+         var y= 300;
+         var dx= 5;
+         var dy= 5;
+
       window.onload=function(){
           var canvas = document.getElementById("micanvas");
           var context = canvas.getContext("2d");
           context.fillStyle= "black";
-          context.fillRect(10,10,40,10); //función para dibujar un rectángulo
+          context.fillRect(10,10,40,30); //función para dibujar un rectángulo
 
            context.fillStyle= "rgba(0,0,255,0.5)";
-          context.fillRect(50,10,40,10); //función para dibujar un rectángulo
+          context.fillRect(50,10,40,30); //función para dibujar un rectángulo
 
           context.fillStyle= "pink";
-          context.fillRect(90,10,40,10); //función para dibujar un rectángulo
+          context.fillRect(90,10,40,30); //función para dibujar un rectángulo
           context.fillStyle= "pink";
-          context.fillRect(130,10,40,10);
+          context.fillRect(130,10,40,30);
           context.fillStyle= "pink";
-          context.fillRect(170,10,40,10);
+          context.fillRect(170,10,40,30);
           context.fillStyle= "rgba(0,0,255,0.5)";
-          context.fillRect(210,10,40,10);
+          context.fillRect(210,10,40,30);
           context.fillStyle= "black";
-          context.fillRect(250,10,40,10);
-           context.fillStyle= "black";
-          context.fillRect(290,10,240,10);
-
+          context.fillRect(250,10,40,30);
+          context.fillStyle= "black";
+          context.fillRect(290,10,240,30);
+          context.fillStyle= "rgba(0,0,255,0.5)";
+          context.fillRect(530,10,40,30);
+          context.fillStyle= "pink";
+          context.fillRect(570,10,120,30);
+          context.fillStyle= "rgba(0,0,255,0.5)";
+          context.fillRect(690,10,40,30);
+          context.fillStyle= "black";
+          context.fillRect(730,10,60,30);
         }
+        
+        function animate(){
+        requestAnimationFrame(animate);
+        console.log('animando');
+
+        var canvas = document.getElementById("micanvas");
+        var context = canvas.getContext("2d");
+        context.clearRect(0, 0, innerWidth, innerHeight);
+
+        context.fillStyle= "white";
+        context.fillRect(100,200,10,10); //función para dibujar un rectángulo
+        context.fillRect(100,210,20,10);
+        context.fillRect(100,220,30,10);
+        context.fillRect(100,230,40,10);
+        context.fillRect(100,240,50,10);
+        context.fillRect(100,250,60,10);
+        context.fillRect(100,260,50,10);
+        context.fillRect(100,270,40,10);
+        context.fillRect(100,280,30,10);
+        context.fillRect(100,290,20,10);
+        context.fillRect(100,300,10,10);
+        
+
+        context.font = '40pt Calibri';
+            context.fillStyle = 'red';
+            context.fillText('START!', x, y);
+           
+        if (x > 700 || x < 0){
+                dx= -dx;
+            } else if(y > 560 || y < 0){
+              dy= -dy;
+            }
+
+        x+=dx;
+        y+=dy;
+    }
+    animate();
+    
   </script>
 
 </head>

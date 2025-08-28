@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pagina 4</title>
+  <style>
+      canvas{
+          border: 3px solid rgb(175, 117, 29);
+          background-color: rgb(0, 0, 0);
+      }
+  </style>
+
+<script>
+    //window.onload=function(){}
+    var x= Math.random()*800;
+    var y= Math.random()*600;
+    var dx= 5;
+    var dy= 5;
+
+
+    function animate(){
+        requestAnimationFrame(animate);
+        console.log('animando');
+
+        var canvas = document.getElementById("micanvas");
+        var context = canvas.getContext("2d");
+        context.clearRect(0, 0, innerWidth, innerHeight);
+
+        context.fillStyle= "white";
+        context.fillRect(x,200,10,100); //función para dibujar un rectángulo
+
+        context.fillStyle= "rgba(0,0,255,0.5)";
+        context.fillRect(200,y,100,40); //función para dibujar un rectángulo
+
+        context.fillStyle= "pink";
+        context.fillRect(x,y,40,40); //función para dibujar un rectángulo
+
+        context.font = '40pt Calibri';
+            context.fillStyle = 'white';
+            context.fillText('Hello world!', x, y);
+           context.fillStyle='rgba(255,0,0,1)';
+
+        if (x > 700 || x < 0){
+                dx= -dx;
+            } else if(y > 560 || y < 0){
+              dy= -dy;
+            }
+
+        x+=dx;
+        y+=dy;
+    }
+    animate();
+</script>
+
+  </head>
+<body>
+   <canvas id="micanvas" width="800" height="600"></canvas>
+</body>
+</html>

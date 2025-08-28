@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 3</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(12, 11, 11);
+        }
+        canvas{
+            border: 5px solid rgb(204, 162, 72);
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+
+    <script>
+      window.onload=function(){
+          var canvas = document.getElementById("micanvas");
+          var context = canvas.getContext("2d");
+          context.fillStyle= "black";
+          context.fillRect(50,10,100,40); //función para dibujar un rectángulo
+
+           context.fillStyle= "rgba(0,0,255,0.5)";
+          context.fillRect(10,70,100,40); //función para dibujar un rectángulo
+
+          context.fillStyle= "pink";
+          context.fillRect(200,200,100,40); //función para dibujar un rectángulo
+      }
+  </script>
+
+</head>
+<body>
+    <canvas id="micanvas" width="800" height="600"></canvas>
+</body>
+</html>
