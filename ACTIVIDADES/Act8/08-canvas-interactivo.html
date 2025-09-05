@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Key Codes</title>
+  </head>
+    <Style>
+      body{
+        background-color: rgb(19, 15, 68);
+        text-align: center;   
+        background-image: url("Fondo.jpg");
+        background-repeat: repeat-x;
+        background-attachment: fixed;
+      }
+
+      canvas {
+        background-color:rgb(22, 101, 192);
+      }
+
+
+   </Style>
+   <body>
+   
+        
+      <img src="Banner-01.jpg" width="100%">  
+      <canvas id="canvas" width="400" height="500"></canvas>
+
+        <script>
+
+        window.onload = function () {
+         var canvas = document.getElementById("canvas");
+         var context = canvas.getContext("2d");
+
+         context.font = '15pt Calibri';
+         context.fillStyle = 'black';
+         context.fillText('Presiona los números para', 90, 100);
+         context.fillText('conocer a los personajes', 95, 120);
+         context.fillText('Seleccionalo con SPACE', 100, 200);
+        
+         var imagen= new Image();
+         imagen.src = "1_odiseo.JPG";
+        
+
+          var imagen2= new Image();
+         imagen2.src = "2_penelope.JPG";
+       
+
+          var imagen3= new Image();
+         imagen3.src = "3_athena.JPG";
+        
+
+          var imagen4= new Image();
+         imagen4.src = "4_telemaco.JPG";
+        
+
+         var imagen5= new Image();
+         imagen5.src = "5_eurilico.JPG";
+         
+
+         var imagen6= new Image();
+         imagen6.src = "6_politees.JPG";
+        
+
+         var imagen7= new Image();
+         imagen7.src = "7_circe.JPG";
+         
+
+         var imagen8= new Image();
+         imagen8.src = "8_hermes.JPG";
+         
+
+         var imagen9= new Image();
+         imagen9.src = "9_tiresias.JPG";
+        
+
+         var imagen0= new Image();
+         imagen0.src = "0_poseidon.JPG";
+         
+
+         var imagen10= new Image();
+         imagen10.src = "Fondo.JPG";
+
+         function onKeyboardEvent (event) {
+             switch (event.keyCode) {
+                    case 49:
+                    console.log("1");
+                    context.clearRect(0,0, innerWidth, innerHeight)
+                    context.fillText('Seleecciona un personaje con SPACE', 60, 50);
+                    context.fillText('Odiseo, Rey de Ithaca', 100, 350);
+                    context.fillText('Mente de un genio', 100, 400);
+                    context.fillText('Bueno con palabras', 100, 420);
+                    context.fillText('¿Algo gracioso?', 100, 440);
+                    context.fillText('Nunca ha sido infiel', 100, 460);
+                    context.drawImage(imagen, 100, 90, 200,200)
+                    break;
+                    
+                    case 50:
+                    console.log("2");
+                    context.clearRect(0,0, innerWidth, innerHeight);
+                    context.fillText('Seleecciona un personaje con SPACE', 60, 50);
+                    context.fillText('Penelope, de Esparta', 110, 350);
+                    context.fillText('Inteligente', 100, 400);
+                    context.fillText('Teje de dia y desteje de noche', 100, 420);
+                    context.fillText('Dirige su reino', 100, 440);
+                    context.fillText('Te espera', 100, 460);
+                    context.drawImage(imagen2, 100, 90, 200,200) 
+                    break;
+                    
+                    case 51:
+                    console.log("3");
+                    context.clearRect(0,0, innerWidth, innerHeight);
+                    context.fillText('Seleecciona un personaje con SPACE', 60, 50);
+                    context.fillText('Athena, diosa de la sabiduría', 90, 350);
+                    context.fillText('Maestra de guerra', 100, 400);
+                    context.fillText('Sabia', 100, 420);
+                    context.fillText('Estrategia', 100, 440);
+                    context.fillText('Poderes divinos', 100, 460);
+                    context.drawImage(imagen3, 100, 90, 200,200) 
+                    break;
+                    
+                    case 52:
+                    console.log("4");
+                    context.clearRect(0,0, innerWidth, innerHeight);
+                    context.fillText('Seleecciona un personaje con SPACE', 60, 50);
+                    context.fillText('Telemaco, little wolf', 110, 350);
+                    context.fillText('Carisma', 100, 400);
+                    context.fillText('Entrenamiento', 100, 420);
+                    context.fillText('Defensor', 100, 440);
+                    context.fillText('Legendario', 100, 460);
+                    context.drawImage(imagen4, 100, 90, 200,200) 
+                    break;
+                    
+                    case 53:
+                    console.log("5");
+                    context.clearRect(0,0, innerWidth, innerHeight);
+                    context.fillText('Seleecciona un personaje con SPACE', 60, 50);
+                    context.fillText('Eurilico, el segundo al mando', 80, 350);
+                    context.fillText('Voz de la razón', 100, 400);
+                    context.fillText('Combate', 100, 420);
+                    context.fillText('Motines', 100, 440);
+                    context.fillText('Abre bolsas ajenas', 100, 460);
+                     context.drawImage(imagen5, 100, 90, 200,200) 
+                    break;
+                    
+                    case 54:
+                    console.log("6");
+                    context.clearRect(0,0, innerWidth, innerHeight);
+                    context.fillText('Seleecciona un personaje con SPACE', 60, 50);
+                    context.fillText('Politees, el mejor amigo', 90, 350);
+                    context.fillText('Amigable', 100, 400);
+                    context.fillText('Carisma', 100, 420);
+                    context.fillText('Pancakes', 100, 440);
+                    context.fillText('La vida es hermosa', 100, 460);
+                     context.drawImage(imagen6, 100, 90, 200,200) 
+                    break;
+                    
+                    case 55:
+                    console.log("7");
+                    context.clearRect(0,0, innerWidth, innerHeight);
+                    context.fillText('Seleecciona un personaje con SPACE', 60, 50);
+                    context.fillText('Circe, la bruja', 130, 350);
+                    context.fillText('Magia', 100, 400);
+                    context.fillText('Persuación', 100, 420);
+                    context.fillText('Conoce un profeta', 100, 440);
+                    context.fillText('Protege a sus ninfas', 100, 460);
+                     context.drawImage(imagen7, 100, 90, 200,200) 
+                    break;
+                    
+                    case 56:
+                    console.log("8");
+                    context.clearRect(0,0, innerWidth, innerHeight);
+                    context.fillText('Seleecciona un personaje con SPACE', 60, 50);
+                    context.fillText('Hermes, el mensajero divino', 90, 350);
+                    context.fillText('Holly Molly', 100, 400);
+                    context.fillText('Buen viajero', 100, 420);
+                    context.fillText('Te ayudará', 100, 440);
+                    context.fillText('Poderes divinos', 100, 460);
+                     context.drawImage(imagen8, 100, 90, 200,200) 
+                    break;
+                    
+                    case 57:
+                    console.log("9");
+                    context.clearRect(0,0, innerWidth, innerHeight);
+                    context.fillText('Seleecciona un personaje con SPACE', 60, 50);
+                    context.fillText('Tiresias, el profeta', 100, 350);
+                    context.fillText('Ve el futuro', 100, 400);
+                    context.fillText('Habla en prosa', 100, 420);
+                    context.fillText('Ciego', 100, 440);
+                    context.fillText('"Veo que ya no eres tu"', 100, 460);
+                     context.drawImage(imagen9, 100, 90, 200,200) 
+                    break;
+                    
+                    case 48:
+                    console.log("0");
+                    context.clearRect(0,0, innerWidth, innerHeight);
+                    context.fillText('Seleecciona un personaje con SPACE', 60, 50);
+                    context.fillText('Poseidon, el señor de los mares', 80, 350);
+                    context.fillText('Vengativo', 100, 400);
+                    context.fillText('Rencoroso', 100, 420);
+                    context.fillText('Tridente mágico', 100, 440);
+                    context.fillText('Poderes divinos', 100, 460);
+                     context.drawImage(imagen0, 100, 90, 200,200) 
+                    break;
+
+                    case 32:
+                    console.log("SPACE");
+                    context.clearRect(0,0, innerWidth, innerHeight);
+                    context.fillText('Bienvenido a la aventura', 100, 350);
+                     context.drawImage(imagen10, 100, 90, 200,200) 
+                    break;
+                    
+                    default:
+                    console.log(event.keyCode);
+                }
+            }
+        
+
+         window.addEventListener('keydown', onKeyboardEvent, false);
+        };
+
+      </script>
+   </body>
+</html>
