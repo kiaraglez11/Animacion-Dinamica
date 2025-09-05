@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Key Codes</title>
+  </head>
+  <body>
+    <aside>Open debugging console in web browser and press arrow key.</aside>
+
+    <script src="keycodes.js"></script>
+    <script>
+    window.onload = function () {
+
+      function onKeyboardEvent (event) {
+        switch (event.keyCode) {
+        case keycode.UP:
+          console.log("up!");
+          break;
+        case keycode.DOWN:
+          console.log("down!");
+          break;
+        case keycode.LEFT:
+          console.log("left!");
+          break;
+        case keycode.RIGHT:
+          console.log("right!");
+          break;
+        case keycode.SPACE:
+          console.log("jump!");
+          break;
+        case keycode.LETRA_A:
+          console.log("A!");
+          break;
+        case keycode.LETRA_B:
+          console.log("B!");
+          break;
+        case keycode.LETRA_C:
+          console.log("C!");
+          break;
+        case keycode.LETRA_D:
+          console.log("D!");
+          break;
+        case keycode.LETRA_E:
+          console.log("E!");
+          break;
+        case keycode.LETRA_F:
+          console.log("F!");
+          break;
+        case keycode.LETRA_G:
+          console.log("G!");
+          break;
+        case keycode.LETRA_H:
+          console.log("H!");
+          break;
+        case keycode.LETRA_I:
+          console.log("I!");
+          break;
+        case keycode.LETRA_J:
+          console.log("J!");
+          break;
+        case keycode.LETRA_K:
+          console.log("K!");
+          break;
+        case keycode.LETRA_L:
+          console.log("L!");
+          break;
+        case keycode.LETRA_M:
+          console.log("M!");
+          break;
+        case keycode.LETRA_N:
+          console.log("N!");
+          break;
+        case keycode.LETRA_O:
+          console.log("O!");
+          break;
+        case keycode.LETRA_P:
+          console.log("P!");
+          break;
+        case keycode.LETRA_Q:
+          console.log("Q!");
+          break;
+        case keycode.LETRA_R:
+          console.log("R!");
+          break;
+        case keycode.LETRA_S:
+          console.log("S!");
+          break;
+        case keycode.LETRA_T:
+          console.log("T!");
+          break;
+        case keycode.LETRA_U:
+          console.log("U!");
+          break;
+        case keycode.LETRA_V:
+          console.log("V!");
+          break;
+        case keycode.LETRA_W:
+          console.log("W!");
+          break;
+        case keycode.LETRA_X:
+          console.log("X!");
+          break;
+        case keycode.LETRA_Y:
+          console.log("Y!");
+          break;
+        case keycode.LETRA_Z:
+          console.log("Z!");
+          break;
+        case keycode.NUMERO_1:
+          console.log("1!");
+          break;
+        case keycode.NUMERO_2:
+          console.log("2!");
+          break;
+        case keycode.NUMERO_3:
+          console.log("3!");
+          break;
+        case keycode.NUMERO_4:
+          console.log("4!");
+          break;
+        case keycode.NUMERO_5:
+          console.log("5!");
+          break;
+        case keycode.NUMERO_6:
+          console.log("6!");
+          break;
+        case keycode.NUMERO_7:
+          console.log("7!");
+          break;
+        case keycode.NUMERO_8:
+          console.log("8!");
+          break;
+        case keycode.NUMERO_9:
+          console.log("9!");
+          break;
+        case keycode.NUMERO_0:
+          console.log("0!");
+          break;
+        default:
+        }
+      }
+
+      window.addEventListener('keydown', onKeyboardEvent, false);
+    };
+    </script>
+  </body>
+</html>
