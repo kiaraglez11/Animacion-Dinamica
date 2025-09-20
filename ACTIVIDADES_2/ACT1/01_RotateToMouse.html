@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rotate to Mouse</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <aside>Move mouse on canvas element.</aside>
+    
+    <script src="utils.js"></script>
+
+    
+    <script>
+    window.onload = function () {
+      var canvas = document.getElementById('canvas'),
+          context = canvas.getContext('2d'),
+          context2 = canvas.getContext('2d'),
+          mouse = utils.captureMouse(canvas),
+          ventilador = new Image();
+          ventilador.src = "circulo.png";
+          diamante = new Image();
+          diamante.src = "diamante.png";
+        
+     (function drawFrame () {
+        window.requestAnimationFrame(drawFrame, canvas);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.save();
+            
+        var x = canvas.width/2;
+        var y = canvas.height/2;
+
+        context.translate(x,y);
+
+        var dx = mouse.x - x,
+            dy = mouse.y - y;
+            
+        var radianes = Math.atan2(dy, dx); //radians
+        console.log(radianes);
+        context.rotate(radianes);
+        context.drawImage(ventilador, -ventilador.width/2, -ventilador.height/2);
+        context.restore();
+        context2.drawImage(diamante, -diamante.width/2, -diamante.height/2);
+        context2.restore();
+        }());
+        
+    };
+    </script>
+  </body>
+</html>
