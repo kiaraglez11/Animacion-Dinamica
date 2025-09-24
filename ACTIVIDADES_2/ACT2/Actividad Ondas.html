@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad Ondas</title>
+
+  </head>  
+
+  <style>
+      body {
+        background-image: url("fondo.jpg");
+        text-align: center;
+      }
+      canvas {
+        background-color: #24719e;
+      }
+      
+    </style>
+
+  <body>
+    <canvas id= "canvas" width="800" height="500"></canvas>
+    
+    <script src="utils.js"></script>
+
+    <script>
+    window.onload = function () {
+      var canvas = document.getElementById('canvas'),
+          context = canvas.getContext('2d'),
+          angle = 0,
+          range = 100,
+          centerScale = 1.5,
+          centerY = canvas.height / 2,
+          xspeed = 1,
+          yspeed = 0.03,
+          escalaX = 1,
+          escalaY = 1,
+          xpos = 0,
+          ypos = centerY;
+          heart = new Image();
+          heart.src = 'heart.png';
+
+      context.lineWidth = 2;
+
+
+      (function drawFrame () {
+        window.requestAnimationFrame(drawFrame, canvas);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.beginPath();
+        context.moveTo(xpos, ypos);
+        //Calculate the new position.
+        xpos += xspeed;
+        angle += yspeed;
+        ypos = centerY + Math.sin(angle) * range;
+        
+        escalaX = escalaY = centerScale + Math.sin(angle) * 1;
+        context.drawImage(heart, xpos-25, ypos-25, 30 * escalaX, 20 * escalaY);
+
+        angle += yspeed;
+
+       context.font = '30pt Calibri';
+      context.fillStyle = 'white';
+      context.fillText('________________________________________________________________', 0, 100);
+      context.fillText('________________________________________________________________', 0, 400);
+      context.fillText('Veamos tu corazón <3', 250, 470);
+
+      }());
+    };
+    </script>
+  </body>
+</html>
