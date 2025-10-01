@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reto Ondas </title>
+
+  </head>  
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+      body {
+        background-image: url("fondoReto.jpg");
+        text-align: center;
+      }
+      canvas {
+        background-image: url("fondoCanvas.jpg");
+      }
+
+      h1 {
+        color: white;
+        text-align: center;
+       
+        font-family: 'Press Start 2P', cursive;
+        font-size: 40px;    
+      }
+      
+    </style>
+
+  <body>
+    <img src="banner.png" width="100%">  
+    <canvas id= "canvas" width="800" height="500"></canvas>
+    
+
+    <script>
+
+    window.onload = function () {
+      var canvas = document.getElementById('canvas'),
+          context = canvas.getContext('2d'),
+          angleY = 0,
+          range = 100,
+          centerScale = 1.5,
+          centerY = canvas.height / 2,
+          xspeed = 1,
+          yspeed = 0.03,
+          escalaX = 1,
+          escalaY = 1,
+          xpos = 0,
+          ypos = centerY;
+          star = new Image();
+          star.src = 'star.png';
+
+      context.lineWidth = 2;
+
+
+      (function drawFrame () {
+
+        context.font = '30pt Press Start 2P';
+         context.fillStyle = 'white';
+         context.fillText('Super Star', 250, 80);
+
+
+        window.requestAnimationFrame(drawFrame, canvas);
+        context.clearRect(0, 40, canvas.width, canvas.height);
+        context.beginPath();
+        context.moveTo(xpos, ypos);
+        //Calculate the new position.
+        xpos += xspeed;
+        angleY += yspeed;
+        ypos = centerY + Math.sin(angleY) * range;
+
+        console.log(xpos);
+        xpos += xspeed;
+        if(xpos>700 || xpos<0){
+       xspeed = -xspeed; 
+      } 
+        ypos = centerY + Math.sin(angleY) * range;
+        context.drawImage(star, xpos, ypos, 100, 100);
+        context.restore();
+
+      }());
+    };
+    </script>
+  </body>
+</html>
