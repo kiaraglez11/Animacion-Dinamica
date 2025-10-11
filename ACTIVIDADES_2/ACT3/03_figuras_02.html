@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Figuras con Líneas y Elipses</title>
+  <style>
+    canvas {
+        background-color: #98bbda;  
+        border: 10px solid #99781c;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="800" height="500"></canvas>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Función para dibujar con líneas
+    function drawPath(color, points, close = true) {
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.moveTo(points[0][0], points[0][1]);
+      for (let i = 1; i < points.length; i++) {
+        ctx.lineTo(points[i][0], points[i][1]);
+      }
+      if (close) ctx.closePath();
+      ctx.stroke();
+    }
+
+    // Función para dibujar una elipse
+    function drawEllipse(color, x, y, radiusX, radiusY, rotation = 0) {
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.ellipse(x, y, radiusX, radiusY, rotation, 0, 2 * Math.PI);
+      ctx.stroke();
+    }
+
+    
+    ctx.beginPath();
+    ctx.fillStyle = 'purple';
+    drawPath('purple', [
+      [100, 300], [200, 300], [200, 400], [100, 400]
+    ]); 
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = 'red';
+    drawPath('red', [
+      [100, 300], [150, 250], [200, 300]
+    ]); 
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = 'red';
+    drawPath('red', [
+      [140, 400], [140, 350], [160, 350], [160, 400]
+    ]); 
+    ctx.fill(); 
+
+   
+    ctx.beginPath();
+    ctx.fillStyle = 'white';
+    drawPath('white', [
+      [300, 400], [310, 340], [340, 340], [350, 400]
+    ]); 
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = 'red';
+    drawEllipse('red', 325, 340, 50, 30); 
+    ctx.fill();
+
+     ctx.beginPath();
+    ctx.fillStyle = 'white';
+    drawEllipse('white', 325, 360, 10, 10); 
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = 'white';
+    drawEllipse('white', 290, 330, 10, 10); 
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = 'white';
+    drawEllipse('white', 360, 330, 10, 10); 
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = 'white';
+    drawEllipse('white', 330, 325, 10, 10); 
+    ctx.fill();
+
+
+    ctx.beginPath();
+    ctx.fillStyle = 'gold';
+    drawPath('gold', [
+      [500, 250], [515, 290], [560, 290], [525, 315],
+      [540, 360], [500, 330], [460, 360], [475, 315],
+      [440, 290], [485, 290], [500, 250]
+    ]);
+    ctx.fill();
+
+   ctx.beginPath();
+   ctx.fillStyle = 'white';
+    drawEllipse('gold', 150, 150, 50, 50);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = 'gray';
+    drawEllipse('gray', 650, 300, 8, 25);
+    ctx.fill();
+    drawEllipse('gray', 670, 300, 8, 25);
+    ctx.fill();
+    drawEllipse('gray', 660, 340, 25, 20);
+    ctx.fill();
+    drawEllipse('gray', 660, 390, 35, 25);
+    ctx.fill();
+    drawEllipse('gray', 700, 390, 10, 10);
+    ctx.fill();
+
+  </script>
+</body>
+</html>
