@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Drawing App</title>
+    <style>
+        body{
+            text-align: center;
+            width: 100%;
+            background-image: url("FONDO MUSEO.jpg");
+
+        }
+        canvas{
+            background-color: rgb(218, 199, 150);
+            border: 7px solid rgb(163, 108, 4);
+        }
+        .container{
+            margin: 0px auto;
+            text-align: center;
+            width: 1000px;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            margin: 5px;
+        }
+        button:hover{
+            opacity: 0.5;
+        }
+        #rosa{
+            background-color:#e2829f;
+            font: 16px impact;
+            color: rgb(0, 0, 0);
+        }
+        #green {
+            background-color:#0a5f2b;
+            font: 16px impact;
+            color: rgb(0, 0, 0);
+        }
+        #blue {
+            background-color:#8bbdff;
+            font: 16px impact;
+            color: rgb(0, 0, 0);
+        }
+        #orange {
+            background-color:#ff8c00;
+            font: 16px impact;
+            color: rgb(0, 0, 0);
+        }
+        #brown {
+            background-color:#3d260a;
+            font: 16px impact;
+            color: rgb(0, 0, 0);
+        }
+         #black {
+            background-color:#000000;
+            font: 16px impact;
+            color: rgb(255, 255, 255);
+         }
+         #white {
+            background-color:#ffffff;
+            font: 16px impact;
+            color: rgb(0, 0, 0);
+         }
+
+        #borrar{
+            width: 300px;
+            background-color:black;
+            font: 16px impact;
+            color: white;
+        }
+
+        #grosor1 {
+            width: 300px;
+            background-color:rgb(90, 78, 78);
+            font: 16px impact;
+            color: white;
+        }
+        #grosor2 {
+            width: 300px;
+            background-color:rgb(90, 78, 78);
+            font: 16px impact;
+            color: white;
+        }
+        #grosor3 {
+            width: 300px;
+            background-color:rgb(90, 78, 78);
+            font: 16px impact;
+            color: white;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+        <div class="colores">
+            <button id="rosa" type="button" value="#e2829f">rosa</button>
+            <button id="green" type="button" value="#0a5f2b">green</button>
+            <button id="blue" type="button" value="#8bbdff">blue</button> 
+            <button id="orange" type="button" value="#ff8c00">orange</button>
+            <button id="brown" type="button" value="#3d260a">brown</button> 
+            <button id="black" type="button" value="#000000">black</button>
+            <button id="white" type="button" value="#ffffff">white</button>
+            
+            <button id="borrar" type="button">borrar todo</button>
+        </div>
+
+        <div class="grosores">
+            <button id="grosor1" type="button" value="1">1</button>
+            <button id="grosor2" type="button" value="3">2</button>
+            <button id="grosor3" type="button" value="6">3</button>
+            
+        </div>
+        <canvas id="canvas" width="900px" height="450px"></canvas>
+        <aside>Click and draw with the mouse.</aside>
+    </div>
+        <script src="utils.js"></script>
+        <script>
+          window.onload = function () {
+        var canvas = document.getElementById('canvas'),
+          context = canvas.getContext('2d'),
+          mouse = utils.captureMouse(canvas);
+
+        canvas.addEventListener('mousedown', function () {
+            context.beginPath();
+            context.moveTo(mouse.x, mouse.y);
+            canvas.addEventListener('mousemove', onMouseMove, false);
+        }, false);
+
+        canvas.addEventListener('mouseup', function () {
+            canvas.removeEventListener('mousemove', onMouseMove, false);
+        }, false);
+
+      function onMouseMove () {
+        context.lineTo(mouse.x, mouse.y);
+        context.stroke();
+      }
+
+      var colores = document.getElementsByClassName('colores')[0];
+      colores.addEventListener('click', function(event) {
+        context.strokeStyle = event.target.value;
+      });
+
+      var clearButton = document.getElementById('borrar');
+      clearButton.addEventListener('click', function() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+      });
+
+      var grosores = document.getElementsByClassName('grosores')[0];
+      grosores.addEventListener('click', function(event) {
+        context.lineWidth = event.target.value;
+      });
+
+
+    };
+    </script>
+    
+  </body>
+</html>
