@@ -24,10 +24,10 @@
       var canvas = document.getElementById('canvas'),
           context = canvas.getContext('2d'),
           ship = new Ship(),
-          vr = 0,
+          vr = 4,
           vx = 0,
           vy = 0,
-          thrust = 3,
+          thrust = 4,
           friction = 0.5;
 
       ship.x = canvas.width / 2;
@@ -42,15 +42,15 @@
           vr = 3;
           break;
         case 38:      //up
-          thrust = 0.05;
+          thrust = 4;
           ship.showFlame = true;
           break;
         }
       }, false);
 
       window.addEventListener('keyup', function () {
-        vr = 0;
-        thrust = 0;
+        vr = 3;
+        thrust = 4;
         ship.showFlame = false;
       }, false);
 
