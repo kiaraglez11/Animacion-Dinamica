@@ -27,7 +27,7 @@
           vr = 0,
           vx = 0,
           vy = 0,
-          thrust = 4,
+          thrust = 1,
           friction = 0.5;
 
       ship.x = canvas.width / 2;
@@ -42,7 +42,7 @@
           vr = 3;
           break;
         case 38:      //up
-          thrust = 4;
+          thrust = 1;
           ship.showFlame = true;
           break;
         }
@@ -50,7 +50,7 @@
 
       window.addEventListener('keyup', function () {
         vr = 3;
-        thrust = 4;
+        thrust = 1;
         ship.showFlame = false;
       }, false);
 
